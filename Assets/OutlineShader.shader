@@ -85,7 +85,7 @@ Shader "Unlit/OutlineShader"
             Interpolators vert (meshData v)
             {
                 Interpolators o;
-                //Fetch the output of the outline function, and put it in a 4D vector (vertexPos)
+                //Fetch the output of the outline function, and put it in a 4D vector (vertexEnlarge)
                 float4 vertexEnlarge = outline(v.vertex, _Thickness);         
                 o.vertex = UnityObjectToClipPos(vertexEnlarge); //From Object space to ClipSpace (-1 to 1)
                 o.uv = v.uv;
